@@ -9,7 +9,7 @@ export default function App({ Component, pageProps }: any) {
   return (
     <>
       <Head>
-        <title>LinkStacks</title>
+        <title>StacksAirdropper</title>
         {process.env.NEXT_PUBLIC_UMAMI_ID && (
           <script
             defer

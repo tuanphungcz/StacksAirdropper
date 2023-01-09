@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 
 const commonButtonProps =
-  'inline-flex items-center px-4 py-2 text-sm space-x-2 font-medium transition rounded-xl cursor-pointer font-medium relative';
+  'inline-flex items-center px-4 py-2 text-sm space-x-2 w-full font-medium transition rounded-xl justify-center cursor-pointer font-medium relative';
 
 export const PrimaryButton = ({ children, ...other }) => {
   return (
