@@ -15,7 +15,7 @@ export default function AppNavbar() {
         <div className="flex items-center justify-between w-full py-4">
           <Link href="/">
             <div className="flex items-center cursor-pointer">
-              <div className="text-xl font-bold ">Linkstacks</div>
+              <div className="text-xl font-bold ">StacksAirdropper</div>
               <div className="ml-2 block rounded-full bg-gray-700 px-2 py-0.5 text-xs font-semibold text-white ">
                 Beta 
               </div>

@@ -21,7 +21,7 @@ export const fetchProfile = async (username: any) => {
     const profileJson: any = await storage.getFile(PROFILE_FILENAME, {
       decrypt: false,
       username: username || undefined,
-      app: 'https://linkstacks.xyz',
+      app: 'https://StacksAirdropper.xyz',
       verify: false
     });
 
@@ -35,11 +35,11 @@ export const fetchProfile = async (username: any) => {
       profile: null
     };
   } catch (e) {
-    console.log('refetch with old domain https://linkstacks.vercel.app');
+    console.log('refetch with old domain https://StacksAirdropper.vercel.app');
     const profileJson: any = await storage.getFile(PROFILE_FILENAME, {
       decrypt: false,
       username: username || undefined,
-      app: 'https://linkstacks.vercel.app',
+      app: 'https://StacksAirdropper.vercel.app',
       verify: false
     });
 

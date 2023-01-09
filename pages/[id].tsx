@@ -34,7 +34,7 @@ export default function Stacks() {
         <div className="text-center">
           <NewTabLink href="/">
             <div className="px-4 py-2 mt-4 inline-flex text-xs text-gray-400 transition hover:text-gray-500 rounded-xl hover:bg-gray-200">
-              Powered by Linkstacks
+              Powered by StacksAirdropper
             </div>
           </NewTabLink>
         </div>
