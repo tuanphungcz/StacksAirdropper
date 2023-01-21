@@ -1,17 +1,29 @@
 [project]
-name = "contracts"
+name = 'contracts'
+description = ''
 authors = []
-description = ""
 telemetry = true
+cache_dir = '.cache'
 requirements = []
-analysis = ["check_checker"]
-costs_version = 2
-[contracts.coffee]
-path = "contracts/coffee.clar"
-depends_on = []
-cache_dir = "./.cache"
 
+[contracts.nft-factory]
+path = 'contracts/nft-factory.clar'
+clarity_version = 2
+epoch = 2.1
+
+[contracts.nft-trait]
+path = 'contracts/nft-trait.clar'
+clarity_version = 2
+epoch = 2.1
 
 [repl.analysis]
-passes = ["check_checker"]
-check_checker = { trusted_sender = false, trusted_caller = false, callee_filter = false }
+passes = [
+    'check_checker',
+    'check_checker',
+]
+
+[repl.analysis.check_checker]
+strict = false
+trusted_sender = false
+trusted_caller = false
+callee_filter = false
