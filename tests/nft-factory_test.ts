@@ -14,11 +14,15 @@ Clarinet.test({
         let block = chain.mineBlock([
 
             // Tx.contractCall('nft-factory', 'claim', [types.ascii('0xccb6be86af3e9cdec0739b206fbccaf2b44c3e4a')], wallet_1.address) // pass Clarity buffer of a Bitcoin public key Hash160
-            Tx.contractCall('nft-factory', 'claim', [public_key_hash], wallet_1.address) // pass Clarity buffer of a Bitcoin public key Hash160
-
+            Tx.contractCall('nft-factory', 'claim', [public_key_hash], wallet_1.address), // pass Clarity buffer of a Bitcoin public key Hash160
 
         ]);
         assertEquals(block.height, 2);
+
+        let call = chain.callReadOnlyFn('nft-factory', 'get-last-token-id', [], wallet_1.address) // ensure count of NFTs is 1 after single mint
+        call.result
+            .expectOk()
+            .expectUint(1)
 
         block = chain.mineBlock([
             /*
