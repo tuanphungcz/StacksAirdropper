@@ -6,13 +6,15 @@ Clarinet.test({
     name: "Ensure that <...>",
     async fn(chain: Chain, accounts: Map<string, Account>, contracts: Map<string, Contract>) {
         
-        const public_key_hash = {hash160: 0xccb6be86af3e9cdec0739b206fbccaf2b44c3e4a}
+
+        const public_key_hash = "0xccb6be86af3e9cdec0739b206fbccaf2b44c3e4a"
         
+
         let wallet_1 = accounts.get('wallet_1')!;
         let block = chain.mineBlock([
 
             // Tx.contractCall('nft-factory', 'claim', [types.ascii('0xccb6be86af3e9cdec0739b206fbccaf2b44c3e4a')], wallet_1.address) // pass Clarity buffer of a Bitcoin public key Hash160
-            Tx.contractCall('nft-factory', 'claim', [types.buff(20, 0xccb6be86af3e9cdec0739b206fbccaf2b44c3e4a)], wallet_1.address) // pass Clarity buffer of a Bitcoin public key Hash160
+            Tx.contractCall('nft-factory', 'claim', [public_key_hash], wallet_1.address) // pass Clarity buffer of a Bitcoin public key Hash160
 
 
         ]);
